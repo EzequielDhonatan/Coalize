@@ -22,12 +22,12 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name'      => 'Ezequiel Dhonatan',
             'email'     => 'ezequieldhonatan@ezedho.com.br',
-            'password'  => bcrypt('123456789'),
+            'password'  => bcrypt('123456789')
         ]);
 
         User::factory()->create([
             'name'      => 'Test User',
-            'email'     => 'test@example.com',
+            'email'     => 'test@example.com'
         ]);
 
         Customer::factory()->count(50)->create();
