@@ -20,9 +20,9 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return ProductResource::collection($this->repository->latest()->paginate());
+        return ProductResource::collection($this->repository->getProducts($request->all()));
     }
 
     /**
