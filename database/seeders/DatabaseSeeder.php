@@ -6,6 +6,12 @@ use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use App\Models\{
+
+    Customer,
+
+}; // Models
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -13,11 +19,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        \App\Models\User::factory()->create([
+            'name'      => 'Test User',
+            'email'     => 'teste@teste.com',
+            'password'  => bcrypt('123456789'),
+        ]);
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name'      => 'Test User',
+            'email'     => 'test@example.com',
         ]);
-    }
-}
+
+        Customer::factory()->count(50)->create();
+
+    } // run
+
+} // DatabaseSeeder
