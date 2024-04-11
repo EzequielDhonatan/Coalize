@@ -9,6 +9,7 @@ use Illuminate\Database\Seeder;
 use App\Models\{
 
     Customer,
+    Product,
 
 }; // Models
 
@@ -31,6 +32,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Customer::factory()->count(50)->create();
+        Product::factory()->count(50)->create();
 
     } // run
 

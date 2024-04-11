@@ -19,8 +19,15 @@ class Product extends Model
     protected $fillable = [
 
         // Data Product
-        'client_id', 'name', 'price', 'photo'
+        'customer_id',
+
+        'name', 'price', 'photo'
 
     ]; // fillable
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
 
 } // Product

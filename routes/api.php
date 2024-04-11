@@ -1,12 +1,22 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use Illuminate\{
 
-use App\Http\Controllers\CustomerController;
+    Http\Request,
+    Support\Facades\Route
+
+}; // Illuminate
+
+use App\Http\Controllers\{
+
+    CustomerController,
+    ProductController
+
+}; // Controllers
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
 Route::apiResource('customer', CustomerController::class);
+Route::apiResource('product', ProductController::class);
