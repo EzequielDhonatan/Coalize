@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignUuid('customer_id')->constrained('customers')->onUpdate('cascade')->onDelete('cascade');
 
             $table->string('name');
-            $table->string('price');
+            $table->double('price', 8, 2);
             $table->string('photo');
 
             $table->timestamps();

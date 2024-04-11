@@ -1,13 +1,9 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\{
-
-    Authentication\Sanctum\AuthenticationSanctumController,
-    CustomerController
-
-}; // Controllers
+use App\Http\Controllers\CustomerController;
 
 Route::prefix('v1')->group(function () {
 
@@ -15,8 +11,4 @@ Route::prefix('v1')->group(function () {
 
     Route::middleware(['auth:sanctum'])->group(function () {
 
-        Route::apiResource('customer', CustomerController::class);
-
-    }); // Sanctum
-
-}); // V1
+Route::apiResource('customer', CustomerController::class);
