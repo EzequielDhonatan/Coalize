@@ -5,14 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Customer;
+use App\Http\Requests\CustomerStoreFormRequest;
+use App\Http\Resources\CustomerResource;
 
 class CustomerController extends Controller
 {
-    private $model;
+    private $repository;
 
-    public function __construct(Customer $model)
+    public function __construct(Customer $repository)
     {
-        $this->model = $model;
+        $this->repository = $repository;
     }
 
     /**
@@ -20,15 +22,15 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return $this->model->paginate();
+        return CustomerResource::collection($this->repository->latest()->paginate());
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CustomerStoreFormRequest $request)
     {
-        //
+        return new CustomerResource($this->repository->create($request->validated()));
     }
 
     /**
