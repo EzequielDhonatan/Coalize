@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         \App\Models\User::factory()->create([
-            'name'      => 'Test User',
-            'email'     => 'teste@teste.com',
+            'name'      => 'Ezequiel Dhonatan',
+            'email'     => 'ezequieldhonatan@ezedho.com.br',
             'password'  => bcrypt('123456789'),
         ]);
 
