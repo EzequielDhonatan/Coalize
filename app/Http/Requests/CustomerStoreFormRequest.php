@@ -24,7 +24,7 @@ class CustomerStoreFormRequest extends FormRequest
         return [
 
             'name'          => 'required|string|min:3',
-            'cpf'           => 'required',
+            'cpf'           => 'required|cpf',
             'photo'         => 'required',
             'gender'        => 'required|string',
 
