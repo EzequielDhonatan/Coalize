@@ -23,7 +23,7 @@ class ProductStoreFormRequest extends FormRequest
     {
         return [
 
-            'customer_id'   => 'required|exists:clients,id',
+            'customer_id'   => 'required|exists:customers,id',
 
             'name'          => 'required|string|min:3',
             'price'         => 'required',

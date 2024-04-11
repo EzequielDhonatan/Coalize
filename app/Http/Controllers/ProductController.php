@@ -30,7 +30,7 @@ class ProductController extends Controller
      */
     public function store(ProductStoreFormRequest $request)
     {
-        //
+        return new ProductResource($this->repository->create($request->validated()));
     }
 
     /**
