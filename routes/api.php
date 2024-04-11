@@ -1,22 +1,14 @@
 <?php
 
-use Illuminate\{
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
-    Http\Request,
-    Support\Facades\Route
+use App\Http\Controllers\CustomerController;
 
-}; // Illuminate
+Route::prefix('v1')->group(function () {
 
-use App\Http\Controllers\{
+    Route::apiResource('/token/create', AuthenticationSanctumController::class);
 
-    CustomerController,
-    ProductController
-
-}; // Controllers
-
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+    Route::middleware(['auth:sanctum'])->group(function () {
 
 Route::apiResource('customer', CustomerController::class);
-Route::apiResource('product', ProductController::class);
