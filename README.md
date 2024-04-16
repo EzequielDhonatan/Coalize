@@ -81,9 +81,15 @@ php artisan key:generate
 ## ⚙️ See it working
 Access: [http://localhost:8080](http://localhost:8080)
 
+### ⌨️ API (Postman)
+
+To test what was developed, simply access the API documentation
+
+* [Documentation](https://www.postman.com/ezequieldhonatan/workspace/coalize-api/overview) - API
 
 
-## 🛠️ Construído com
+
+## 🛠️ Built with
 
 Technologies and tools used
 
